@@ -8,6 +8,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+/**
+ * @author Kristo
+ *
+ */
 public class ReadFromFile {
 	
 	/**
@@ -21,9 +25,20 @@ public class ReadFromFile {
 	private String[] fileContent= null;
 	
 	/**
-	 * var Array fileContentMatrix
+	 * @var Array fileContentMatrix
 	 */
 	private char[][] fileContentMatrix = null;
+	
+	
+	/**
+	 * @var int numberOfLines
+	 */
+	private int numberOfLines = 0;
+	
+	/**
+	 * @var int nuberOfColumns
+	 */
+	private int nuberOfColumns = 0;
 	
 	/**
 	 * @param pathToFile
@@ -121,7 +136,7 @@ public class ReadFromFile {
 			throw new IllegalStateException("Object not initialised properly, file content missing!");
 		}
 		
-		char[] resultColumnArray = new char[fileContentMatrix[0].length];
+		char[] resultColumnArray = new char[this.nuberOfColumns];
 		for(int i=0; i<this.fileContent.length; i++){
 			resultColumnArray[i] = this.fileContent[i].charAt(columnNumber);
 		}
@@ -151,7 +166,7 @@ public class ReadFromFile {
 	 * @return array
 	 */
 	public char[][] readSpecificContentBlock(int startLine, int endLine, int startColumn, int endColumn){
-		char[][] resultBlock = new char[fileContentMatrix.length][fileContentMatrix[0].length];
+		char[][] resultBlock = new char[this.numberOfLines][this.nuberOfColumns];
 		int resultBlockLine = 0;
 		int resultBlockColumn = 0;		
 		
@@ -196,6 +211,9 @@ public class ReadFromFile {
 		int fileLines = Integer.parseInt(fileDetails[0]);
 		int fileColumns = Integer.parseInt(fileDetails[1]);	
 		
+		this.nuberOfColumns = fileColumns;
+		this.numberOfLines = fileLines;
+		
 		this.fileContentMatrix = new char[fileLines][fileColumns];
 	}
 	
@@ -227,6 +245,22 @@ public class ReadFromFile {
 	 */
 	public char[][] getFileContentMatrix() {
 		return this.fileContentMatrix;
-	}	
+	}
+
+	/**
+	 * @return int
+	 */
+	public int getNumberOfLines() {
+		return numberOfLines;
+	}
+
+	/**
+	 * @return  int
+	 */
+	public int getNuberOfColumns() {
+		return nuberOfColumns;
+	}
+	
+	
 	
 }
