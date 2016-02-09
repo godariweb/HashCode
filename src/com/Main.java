@@ -37,7 +37,6 @@ public class Main {
 			System.out.println(fileCharContent[i]);
 		}
 		System.out.println("\n\n");
-		
 
 		// Test that readColumnAsString function works
 		int columnNumber = 11;
