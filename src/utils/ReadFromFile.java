@@ -187,13 +187,30 @@ public class ReadFromFile {
 	}
 	
 	/**
+	 * @param charater
+	 * @return int
+	 */
+	public int countCaracter(char charater){
+		int characterCount = 0;
+		for(int i=0; i<this.numberOfLines; i++){			
+			for(int j=0; j<this.nuberOfColumns; j++){				
+				if(charater == this.fileContentMatrix[i][j]){
+					characterCount++;										
+				}				
+			}	
+		}
+		
+		return characterCount;
+	}
+	
+	/**
 	 * Generate an char matrix from file content
 	 */
 	private void generateMatrixFromFileContent(){
 		
-		for(int i=0; i<this.fileContent.length-1; i++){
+		for(int i=0; i<this.fileContent.length; i++){
 			char[] contentRow = this.fileContent[i].toCharArray();
-			for(int j=0; j<contentRow.length-1; j++){
+			for(int j=0; j<contentRow.length; j++){
 				this.fileContentMatrix[i][j] = contentRow[j];
 			}			
 		}

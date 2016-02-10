@@ -8,7 +8,17 @@ import utils.WriteToFile;
 public class Main {
 
 	public static void main(String[] args) throws IOException {
-		testReadFromFileMethods();
+		// testReadFromFileMethods();
+		kristoAlgorithmImplementation();
+	}
+
+	public static void kristoAlgorithmImplementation() throws IOException {
+		// decalring input and output file path
+		String inputFilePath = "C:\\Users\\Kristo\\workspace\\HashCode\\files\\logo.in";
+		// ReadFromFile object initialization
+		ReadFromFile readFromFileObject = new ReadFromFile(inputFilePath);
+		System.out.println(readFromFileObject.countCaracter('#'));
+		System.out.println(readFromFileObject.countCaracter('.'));
 	}
 
 	public static void testReadFromFileMethods() throws IOException {
@@ -18,14 +28,14 @@ public class Main {
 		// ReadFromFile object initialization
 		ReadFromFile readFromFileObject = new ReadFromFile(inputFilePath);
 
-		// Test that readFile function works 
+		// Test that readFile function works
 		String[] fileContent = readFromFileObject.readFile();
 		for (int i = 0; i < fileContent.length; i++) {
 			System.out.println(fileContent[i]);
 		}
 		System.out.println("\n\n");
 
-		//Test that readLineAsString function works
+		// Test that readLineAsString function works
 		int lineNumber = 1;
 		System.out.println(readFromFileObject.readLineAsString(lineNumber));
 		System.out.println("\n\n");
@@ -37,7 +47,6 @@ public class Main {
 			System.out.println(fileCharContent[i]);
 		}
 		System.out.println("\n\n");
-		
 
 		// Test that readColumnAsString function works
 		int columnNumber = 11;
@@ -52,7 +61,7 @@ public class Main {
 		}
 		System.out.println("\n\n");
 
-		//Test that readSpecificElement function works
+		// Test that readSpecificElement function works
 		int seLineNumber = 0;
 		int seColumnNumber = 8;
 		System.out.println(readFromFileObject.readSpecificElement(seLineNumber, seColumnNumber));
