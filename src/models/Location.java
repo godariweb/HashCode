@@ -18,4 +18,9 @@ public class Location {
 		return row;
 	}
 	
+	public int distanceToOtherLocation(Location otherLocation) {
+		
+		return (int)Math.sqrt(Math.pow((otherLocation.getRow() - this.getRow()), 2) +  Math.pow((otherLocation.getCol() - this.getCol()), 2));
+	}
+	
 }
