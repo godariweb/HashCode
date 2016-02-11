@@ -12,7 +12,21 @@ public class Order implements Comparable<Order>{
 		this.locationToBeDelivered = locationToBeDelivered;
 		this.productsToBeDelibered = productsToBeDelibered;
 	}
-
+	
+	
+	public void selectBestDroneForOrder( 
+		ArrayList<Drone> listOfAvaiableDrones, 
+		Product produs, 
+		ArrayList<Location> destinationCordonates
+	){
+		Drone winingDrone = null;
+		
+		for(int i=0; i<listOfAvaiableDrones.size(); i++){
+			
+		}
+		
+	}
+	
 	public Location getLocationToBeDelivered() {
 		return locationToBeDelivered;
 	}
