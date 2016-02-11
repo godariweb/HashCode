@@ -17,6 +17,94 @@ public class InputDataObject {
 	int numberOfDifferentPrTypes;			// >= 1 <=10000
 	int [] weightsOfProductTypes;			//1 <= weight <= maxLoadOfDrone 
 	
+	public int getNrRows() {
+		return nrRows;
+	}
+
+	public void setNrRows(int nrRows) {
+		this.nrRows = nrRows;
+	}
+
+	public int getNrColumns() {
+		return nrColumns;
+	}
+
+	public void setNrColumns(int nrColumns) {
+		this.nrColumns = nrColumns;
+	}
+
+	public int getNrDrones() {
+		return nrDrones;
+	}
+
+	public void setNrDrones(int nrDrones) {
+		this.nrDrones = nrDrones;
+	}
+
+	public int getDeadLineOfSimulation() {
+		return deadLineOfSimulation;
+	}
+
+	public void setDeadLineOfSimulation(int deadLineOfSimulation) {
+		this.deadLineOfSimulation = deadLineOfSimulation;
+	}
+
+	public int getMaxLoadOfDrone() {
+		return maxLoadOfDrone;
+	}
+
+	public void setMaxLoadOfDrone(int maxLoadOfDrone) {
+		this.maxLoadOfDrone = maxLoadOfDrone;
+	}
+
+	public int getNumberOfDifferentPrTypes() {
+		return numberOfDifferentPrTypes;
+	}
+
+	public void setNumberOfDifferentPrTypes(int numberOfDifferentPrTypes) {
+		this.numberOfDifferentPrTypes = numberOfDifferentPrTypes;
+	}
+
+	public int[] getWeightsOfProductTypes() {
+		return weightsOfProductTypes;
+	}
+
+	public void setWeightsOfProductTypes(int[] weightsOfProductTypes) {
+		this.weightsOfProductTypes = weightsOfProductTypes;
+	}
+
+	public int getNumberOfWareHouses() {
+		return numberOfWareHouses;
+	}
+
+	public void setNumberOfWareHouses(int numberOfWareHouses) {
+		this.numberOfWareHouses = numberOfWareHouses;
+	}
+
+	public ArrayList<Warehouse> getWarehouses() {
+		return warehouses;
+	}
+
+	public void setWarehouses(ArrayList<Warehouse> warehouses) {
+		this.warehouses = warehouses;
+	}
+
+	public int getNumberOfOrders() {
+		return numberOfOrders;
+	}
+
+	public void setNumberOfOrders(int numberOfOrders) {
+		this.numberOfOrders = numberOfOrders;
+	}
+
+	public ArrayList<Order> getOrders() {
+		return orders;
+	}
+
+	public void setOrders(ArrayList<Order> orders) {
+		this.orders = orders;
+	}
+
 	int numberOfWareHouses;			// >= 1 <=10000
 	ArrayList<Warehouse> warehouses;
 	
@@ -46,8 +134,7 @@ public class InputDataObject {
 				weightsOfProductTypes[i] = Integer.parseInt(thirdLine[i]);
 			}
 			
-			numberOfWareHouses = Integer.parseInt(rff.getFileContent()[3]);
-			
+			numberOfWareHouses = Integer.parseInt(rff.getFileContent()[3]);			
 			warehouses = new ArrayList<Warehouse>();
 			
 			int whereWareHousesEnd =  2*numberOfWareHouses + 4;
@@ -92,8 +179,7 @@ public class InputDataObject {
 				
 				orders.add(new Order(locationToBeDelivered, orderProducts));
 			}
-			
-			
+						
 			System.out.println(rff.getFileContent()[0]);
 			
 		} catch (IOException e) {

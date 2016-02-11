@@ -10,87 +10,18 @@ import utils.WriteToFile;
 public class Main {
 
 	public static final String pathToIntFolder = "C:\\Users\\Bogdan\\Desktop\\facultate\\google hash code\\git\\HashCode\\src\\in";
+	public static final String pathToIntFolderAndrei = "C:\\Users\\AncientMachine\\Desktop\\hashCode\\probleme\\HashCode\\src\\in";
 	
 	public static void main(String[] args) throws IOException {
-		
+		int step = 0; 
 		InputDataObject busyDay = new InputDataObject(pathToIntFolder, "busy_day");
-		InputDataObject motherOfAllWarehouses = new InputDataObject(pathToIntFolder, "mother_of_all_warehouses");
+		InputDataObject motherOfAllWarehouses = new InputDataObject(pathToIntFolderAndrei, "mother_of_all_warehouses");
 		InputDataObject redundancy = new InputDataObject(pathToIntFolder, "redundancy");
 		
+		for(step=0; step < 100; step++) {
+			
+		}
 		
 	}
-
-	public static void kristoAlgorithmImplementation() throws IOException {
-		// decalring input and output file path
-		String inputFilePath = "C:\\Users\\Kristo\\workspace\\HashCode\\files\\logo.in";
-		// ReadFromFile object initialization
-		ReadFromFile readFromFileObject = new ReadFromFile(inputFilePath);
-		System.out.println(readFromFileObject.countCaracter('#'));
-		System.out.println(readFromFileObject.countCaracter('.'));
-	}
-
-	public static void testReadFromFileMethods() throws IOException {
-		// decalring input and output file path
-		String inputFilePath = "C:\\Users\\Kristo\\workspace\\HashCode\\files\\logo.in";
-
-		// ReadFromFile object initialization
-		ReadFromFile readFromFileObject = new ReadFromFile(inputFilePath);
-
-		// Test that readFile function works
-		String[] fileContent = readFromFileObject.readFile();
-		for (int i = 0; i < fileContent.length; i++) {
-			System.out.println(fileContent[i]);
-		}
-		System.out.println("\n\n");
-
-		// Test that readLineAsString function works
-		int lineNumber = 1;
-		System.out.println(readFromFileObject.readLineAsString(lineNumber));
-		System.out.println("\n\n");
-
-		// Test that readLineAsCharArray function works
-		int lineNumber2 = 2;
-		char[] fileCharContent = readFromFileObject.readLineAsCharArray(lineNumber2);
-		for (int i = 0; i < fileCharContent.length; i++) {
-			System.out.println(fileCharContent[i]);
-		}
-		System.out.println("\n\n");
-
-		// Test that readColumnAsString function works
-		int columnNumber = 11;
-		System.out.println(readFromFileObject.readColumnAsString(columnNumber));
-		System.out.println("\n\n");
-
-		// Test that readColumnAsCharArray function works
-		int columnNumber2 = 11;
-		char[] fileCharContent2 = readFromFileObject.readColumnAsCharArray(columnNumber2);
-		for (int i = 0; i < fileCharContent2.length; i++) {
-			System.out.println(fileCharContent2[i]);
-		}
-		System.out.println("\n\n");
-
-		// Test that readSpecificElement function works
-		int seLineNumber = 0;
-		int seColumnNumber = 8;
-		System.out.println(readFromFileObject.readSpecificElement(seLineNumber, seColumnNumber));
-		System.out.println("\n\n");
-
-		// Test that readSpecificContentBlock function works
-		int startLine = 5;
-		int endLine = 10;
-		int startColumn = 10;
-		int endColumn = 30;
-
-		char[][] blockFileContent = readFromFileObject.readSpecificContentBlock(startLine, endLine, startColumn,
-				endColumn);
-		for (int i = 0; i < blockFileContent.length; i++) {
-			char[] contentRow = blockFileContent[i];
-			String finalRow = "";
-			for (int j = 0; j < contentRow.length; j++) {
-				finalRow += contentRow[j];
-			}
-			System.out.println(finalRow);
-		}
-	}
-
+	
 }
