@@ -73,11 +73,11 @@ public class InputDataObject {
 			
 			numberOfOrders = Integer.parseInt(rff.getFileContent()[whereWareHousesEnd]);
 			
-			int whereOrdersEnd = numberOfOrders = 3*numberOfOrders + whereWareHousesEnd + 1;
+			int whereOrdersEnd = 3*numberOfOrders + whereWareHousesEnd + 1;
 			
+			orders = new ArrayList<Order>();
 			
-			
-			for(int i = whereOrdersEnd + 1; i < whereOrdersEnd; i+=3) {
+			for(int i = whereWareHousesEnd + 1; i < whereOrdersEnd; i+=3) {
 				String toBeDelivered = rff.getFileContent()[i];
 				Location locationToBeDelivered = new Location(Integer.parseInt(toBeDelivered.split(" ")[0]), Integer.parseInt(toBeDelivered.split(" ")[1]));
 			
@@ -86,7 +86,7 @@ public class InputDataObject {
 				
 				ArrayList<Product> orderProducts = new ArrayList<Product>();
 				
-				for(int j = 0; j < orderProductsCounts; i=j++) {
+				for(int j = 0; j < orderProductsCounts; j++) {
 					orderProducts.add(new Product(Integer.parseInt(productsWithType[j])));
 				}
 				
