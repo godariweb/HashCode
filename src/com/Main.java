@@ -1,6 +1,7 @@
 package com;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import models.InputDataObject;
 import models.Location;
@@ -19,9 +20,9 @@ public class Main {
 		InputDataObject busyDay = new InputDataObject(pathToIntFolder, "busy_day");
 		InputDataObject motherOfAllWarehouses = new InputDataObject(pathToIntFolderAndrei, "mother_of_all_warehouses");
 		InputDataObject redundancy = new InputDataObject(pathToIntFolder, "redundancy");
-		
+		ArrayList<Product> productsToBeDelivery = new ArrayList<Product>();
 		for (Order order : motherOfAllWarehouses.getOrders()) {
-			
+			productsToBeDelivery.addAll(order.getProductsToBeDelibered());
 		}
 		for(step=0; step < motherOfAllWarehouses.getDeadLineOfSimulation(); step++) {
 
