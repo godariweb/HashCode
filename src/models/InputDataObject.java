@@ -46,8 +46,7 @@ public class InputDataObject {
 				weightsOfProductTypes[i] = Integer.parseInt(thirdLine[i]);
 			}
 			
-			numberOfWareHouses = Integer.parseInt(rff.getFileContent()[3]);
-			
+			numberOfWareHouses = Integer.parseInt(rff.getFileContent()[3]);			
 			warehouses = new ArrayList<Warehouse>();
 			
 			int whereWareHousesEnd =  2*numberOfWareHouses + 4;
@@ -92,8 +91,7 @@ public class InputDataObject {
 				
 				orders.add(new Order(locationToBeDelivered, orderProducts));
 			}
-			
-			
+						
 			System.out.println(rff.getFileContent()[0]);
 			
 		} catch (IOException e) {
