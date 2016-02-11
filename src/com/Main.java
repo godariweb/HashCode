@@ -3,7 +3,9 @@ package com;
 import java.io.IOException;
 
 import models.InputDataObject;
-
+import models.Location;
+import models.Order;
+import models.Product;
 import utils.ReadFromFile;
 import utils.WriteToFile;
 
@@ -18,10 +20,21 @@ public class Main {
 		InputDataObject motherOfAllWarehouses = new InputDataObject(pathToIntFolderAndrei, "mother_of_all_warehouses");
 		InputDataObject redundancy = new InputDataObject(pathToIntFolder, "redundancy");
 		
-		for(step=0; step < 100; step++) {
+		for (Order order : motherOfAllWarehouses.getOrders()) {
 			
+		}
+		for(step=0; step < motherOfAllWarehouses.getDeadLineOfSimulation(); step++) {
+
 		}
 		
 	}
+	
+	public static int computeDistance(Location a, Location b) {
+		double d = Math.sqrt(Math.pow(Math.abs(a.getCol()-b.getCol()), 2) + Math.pow(Math.abs(a.getRow()-b.getRow()), 2) );
+		
+		return (int)Math.ceil(d);
+	}
+	
+
 
 }
