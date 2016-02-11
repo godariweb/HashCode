@@ -48,9 +48,9 @@ public class ReadFromFile {
 	public ReadFromFile(String pathToFile) throws IOException{
 		this.pathToFile = pathToFile;		
 		readFileLinesAndSaveToArray();
-		initializeFileContentMatrix();
-		removeFirstLine();
-		generateMatrixFromFileContent();
+//		initializeFileContentMatrix();
+//		removeFirstLine();
+//		generateMatrixFromFileContent();
 	}
 
 	/**
