@@ -35,6 +35,9 @@ public class Main {
 		return (int)Math.ceil(d);
 	}
 	
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 13eb8f52567e6d89b3fd60bc2953be8df572c6ea
 }
